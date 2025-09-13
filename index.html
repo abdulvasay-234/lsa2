@@ -14,8 +14,6 @@ html, body {
 body {
   font-family: 'Press Start 2P', cursive;
   min-height: 100vh;
-  height: 100%;
-  width: 100%;
   background: linear-gradient(135deg, #ff9800 0%, #fdbc3d 50%, #fbc02d 100%);
   color: white;
   text-align: center;
@@ -24,152 +22,151 @@ body {
   background-size: cover;
   overflow-x: hidden;
 }
-    .timer-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
 
-    h1 {
-      font-size: 2.2rem;
-      text-shadow: 2px 2px 4px black;
-      margin-top: 0;
-      margin-bottom: 18px;
-    }
-
-    #timer {
-      font-size: 3rem;
-      color: red;
-      text-shadow: 3px 3px 6px black;
-      margin-top: 20px;
-      margin-bottom: 26px;
-    }
-
-    .mario {
-      width: 60px;
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      animation: run 20s linear infinite;
-      display: none;
-    }
-
-    @keyframes run {
-      from { left: -100px; }
-      to { left: 100%; }
-    }
-
-    .logo {
-      position: absolute;
-      left: 20px;
-      top: -70px;
-      width: 300px;
-      height: auto;
-      z-index: 10;
-    }
-
-    .coin {
-      position: fixed;
-      top: 20vh;
-      width: 40px;
-      height: 40px;
-      background: url('coin.png') no-repeat center/contain;
-      z-index: 20;
-      animation: coin-float 4s linear;
-    }
-    @keyframes coin-float {
-      from { opacity: 1; top: 20vh;}
-      to { opacity: 0; top: 5vh;}
-    }
-
-    /* Side images */
-    .side-img {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 120px;
-      height: auto;
-      z-index: 5;
-    }
-    .left-img {
-    left: 40px;
-    top: 250px;
-    width: 190px;
-    }
-    .right-img {
-      right: 40px;
-        top: 100px;
-        width: 250px;
-    }
-    .bottom-img {
-  position: fixed;
-  left: 85%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 200px;   /* Change size as needed */
-  height: auto;
-  z-index: 10;
-  pointer-events: none; /* So it doesn't block clicks */
+/* Responsive container */
+.timer-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
-.bottom-im {
+h1 {
+  font-size: 6vw;
+  text-shadow: 2px 2px 4px black;
+  margin-top: 0;
+  margin-bottom: 18px;
+  word-break: break-word;
+}
+
+h3 {
+  font-size: 3vw;
+}
+
+#timer {
+  font-size: 8vw;
+  color: red;
+  text-shadow: 3px 3px 6px black;
+  margin-top: 20px;
+  margin-bottom: 26px;
+}
+
+.logo {
+  position: absolute;
+  left: 2vw;
+  top: 2vw;
+  max-width: 35vw;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+}
+
+.mario {
+  width: 9vw;
+  min-width: 38px;
+  position: absolute;
+  bottom: 2vw;
+  left: 0;
+  animation: run 20s linear infinite;
+  display: none;
+  z-index: 20;
+}
+
+@keyframes run {
+  from { left: -100px; }
+  to { left: 100vw; }
+}
+
+.coin {
   position: fixed;
-  left: 20%;
+  top: 20vh;
+  left: 50vw;
+  width: 6vw;
+  max-width: 40px;
+  height: 6vw;
+  max-height: 40px;
+  background: url('coin.png') no-repeat center/contain;
+  z-index: 20;
+  animation: coin-float 4s linear;
+}
+@keyframes coin-float {
+  from { opacity: 1; top: 20vh;}
+  to { opacity: 0; top: 5vh;}
+}
+
+/* Side images */
+.side-img {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18vw;
+  max-width: 140px;
+  height: auto;
+  z-index: 5;
+}
+.left-img {
+  left: 2vw;
+}
+.right-img {
+  right: 2vw;
+}
+.bottom-img {
+  position: fixed;
+  left: 87vw;
   bottom: 0;
   transform: translateX(-50%);
-  width: 150px;   /* Adjust size as needed */
+  width: 18vw;
+  max-width: 200px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+.bottom-im {
+  position: fixed;
+  left: 13vw;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 13vw;
+  max-width: 150px;
   height: auto;
   z-index: 20;
   pointer-events: none;
 }
 
-@media (max-width: 600px) {
-  .bottom-img {
-    width: 120px;
-  }
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-@media (max-width: 600px) {
-  .bottom-img {
-    width: 120px;
-  }
+/* Extra Mobile Tweaks */
+@media (max-width: 900px) {
+  .logo { max-width: 45vw; }
+  .side-img { width: 22vw; max-width: 85px; }
+  .bottom-img { width: 22vw; max-width: 110px; }
+  .bottom-im { width: 17vw; max-width: 90px; }
+  h1 { font-size: 8vw; }
+  h3 { font-size: 4vw; }
+  #timer { font-size: 11vw; }
+  .mario { width: 7vw; }
 }
-    @media (max-width: 600px) {
-      .timer-container {
-        width: 98%;
-      }
-      h1 {
-        font-size: 1.3rem;
-      }
-      #timer {
-        font-size: 2rem;
-      }
-      .mario {
-        width: 42px;
-        bottom: 10px;
-      }
-      .logo {
-        width: 160px;
-        left: 5px;
-        top: 0px;
-      }
-      .coin {
-        width: 24px;
-        height: 24px;
-      }
-      .side-img {
-        width: 70px;
-        top: auto;
-        bottom: 10px;
-        transform: none;
-      }
-    }
+@media (max-width: 600px) {
+  .logo { max-width: 65vw; left: 2vw; top: 1vw; }
+  .side-img { width: 32vw; max-width: 60px; }
+  .bottom-img { width: 32vw; max-width: 60px; }
+  .bottom-im { width: 27vw; max-width: 45px; }
+  h1 { font-size: 10vw; }
+  h3 { font-size: 6vw; }
+  #timer { font-size: 14vw; }
+  .mario { width: 12vw; min-width: 24px; }
+}
+
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
@@ -186,6 +183,7 @@ body {
   </div>
   <img src="mario.png" class="mario" id="mario" alt="Mario running">
 
+  <!-- The rest of your JS remains unchanged -->
   <script>
     // Game timing setup
     const startDateTime = new Date("2025-09-15T12:00:00");
