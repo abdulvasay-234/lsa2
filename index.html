@@ -208,7 +208,7 @@ img {
         // Play waiting music if not already playing
         if (!waitMusic || waitMusic.paused) {
           if (waitMusic) waitMusic.pause();
-          waitMusic = new Audio("wait-music.mp3");
+          waitMusic = new Audio("wait-time.mp3");
           waitMusic.loop = true;
           waitMusic.volume = 0.4;
           waitMusic.play().catch(() => {/* Autoplay might be blocked */});
@@ -286,3 +286,4 @@ img {
   </script>
 </body>
 </html>
+
